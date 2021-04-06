@@ -70,3 +70,26 @@
     background-color: $primary-btn-hover;
   }
 }
+
+// BUTTON UP STYLES
+
+.button-up {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  background-color: #fea5bb;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+.button-up__icon {
+  fill: $primary-text-color;
+}
+
+.button-up:hover {
+  background-color: $accent-color;
+}
