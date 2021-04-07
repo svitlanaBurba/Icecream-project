@@ -4,6 +4,16 @@
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
+  // position: relative;
+  background-image: url('../images/header-hero/mobile/mobile-1.png');
+  background-size: 285px 420px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('../images/header-hero/mobile/mobile-1@2x.png');
+  }
 }
 
 .header {
@@ -203,16 +213,17 @@
 }
 
 .background-container {
+  width: auto;
   position: relative;
-  background-image: url('../images/header-hero/mobile/mobile-1.png');
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    background-image: url('../images/header-hero/mobile/mobile-1@2x.png');
-  }
+  // background-image: url('../images/header-hero/mobile/mobile-1.png');
+  // background-size: 90%;
+  // background-repeat: no-repeat;
+  // background-position: bottom right;
+  // @media screen and (min-device-pixel-ratio: 2),
+  //   screen and (min-resolution: 192dpi),
+  //   screen and (min-resolution: 2dppx) {
+  //   background-image: url('../images/header-hero/mobile/mobile-1@2x.png');
+  // }
 }
 
 // .mobile-menu.mobile-menu--is-open {
@@ -234,8 +245,8 @@
 }
 @media screen and (min-width: 768px) {
   .header {
-    width: 700px;
-    padding: 37px 0;
+    width: 100%;
+    padding: 37px 15px;
     & .button--arrow-theme-white {
       display: block;
       width: 160px;
@@ -255,6 +266,9 @@
   }
 
   // ======= HERO
+  .header-hero {
+    background-image: none;
+  }
   .hero {
     padding-bottom: 35px;
     &__container-left {
@@ -373,6 +387,7 @@
     }
   }
   .background-container {
+    width: 730px;
     background-image: url('../images/header-hero/tablet/tablet-3.png'),
       url('../images/header-hero/tablet/tablet-1.png');
     background-size: 25%, 45%;
@@ -388,8 +403,6 @@
 }
 @media screen and (min-width: 1280px) {
   .header {
-    width: 1040px;
-    padding: 38px 0;
     display: flex;
     justify-content: space-between;
   }
@@ -503,6 +516,7 @@
     }
   }
   .background-container {
+    width: 1080px;
     background-image: url('../images/header-hero/desctop/desctop-3.png'),
       url('../images/header-hero/desctop/desctop-1.png');
     background-size: 27%, 50%;
