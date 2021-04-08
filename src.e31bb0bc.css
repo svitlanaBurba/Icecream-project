@@ -157,6 +157,7 @@ body {
   background-color: #fea5bb;
   border-radius: 50%;
   transform: rotate(-90deg);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-up__icon {
@@ -235,6 +236,15 @@ body {
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
+  background-image: url("/mobile-1.e6b1e06f.png");
+  background-size: 285px 420px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .header-hero {
+    background-image: url("/mobile-1@2x.ec15e968.png");
+  }
 }
 
 .header {
@@ -251,11 +261,34 @@ body {
 
 .logo {
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
-.logo-picture {
+.logo__icon-background {
+  position: relative;
+  margin-right: 20px;
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  border: 1px solid #ffb8ca;
+  background-color: #ffffff;
+}
+.logo__icon {
+  position: absolute;
+  top: -2px;
+  left: -1px;
   height: 50px;
-  width: 200px;
+  width: 50px;
+}
+.logo__text {
+  font-family: "Titan One", cursive;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.0001em;
+  text-transform: uppercase;
+  color: #d41439;
 }
 
 .burger-button {
@@ -419,16 +452,8 @@ body {
 }
 
 .background-container {
+  width: auto;
   position: relative;
-  background-image: url("/mobile-1.e6b1e06f.png");
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .background-container {
-    background-image: url("/mobile-1@2x.ec15e968.png");
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -443,8 +468,8 @@ body {
 }
 @media screen and (min-width: 768px) {
   .header {
-    width: 700px;
-    padding: 37px 0;
+    width: 100%;
+    padding: 37px 15px;
   }
   .header .button--arrow-theme-white {
     display: block;
@@ -453,6 +478,10 @@ body {
 
   .burger-button {
     margin: 0 30px 0 auto;
+  }
+
+  .header-hero {
+    background-image: none;
   }
 
   .hero {
@@ -582,6 +611,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .background-container {
+    width: 730px;
     background-image: url("/tablet-3.4b9a5f65.png"), url("/tablet-1.84a5515c.png");
     background-size: 25%, 45%;
     background-repeat: no-repeat;
@@ -595,8 +625,6 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .header {
-    width: 1040px;
-    padding: 38px 0;
     display: flex;
     justify-content: space-between;
   }
@@ -726,6 +754,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .background-container {
+    width: 1080px;
     background-image: url("/desctop-3.30344330.png"), url("/desctop-1.4fad892c.png");
     background-size: 27%, 50%;
     background-repeat: no-repeat;
@@ -1033,6 +1062,10 @@ body {
   height: 40px;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.products__link:hover, .products__link:focus {
+  background-color: #ecebeb;
 }
 .products__icon {
   fill: #d41443;
@@ -1648,39 +1681,62 @@ body {
   border-radius: 0%;
 }
 
+.slick-prev:before {
+  position: absolute;
+  background-image: url("/chevron-right.6ebf882a.svg");
+  transform: rotate(180deg);
+  background-size: 50px 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  content: "";
+}
+
+.slick-next:before {
+  background-image: url("/chevron-right.6ebf882a.svg");
+  background-size: 50px 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  content: "";
+}
+
 .slick-prev,
 .slick-next {
   top: 9%;
-  background: #d9d9d9;
-  border-radius: 50%;
-  width: 20px;
-  height: 19px;
 }
 
 .slick-prev {
-  left: 36px;
+  left: -9px;
+}
+
+.slick-prev.slick-arrow {
+  top: 7%;
 }
 
 .slick-next {
   right: 36px;
 }
 
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus {
+.slick-prev:before:hover,
+.slick-prev:before:focus,
+.slick-next:before:hover,
+.slick-next:before:focus {
   background: #d31342;
-  border-radius: 50%;
 }
 
 @media screen and (min-width: 768px) {
   .slick-prev,
 .slick-next {
-    top: 56%;
+    top: 160px;
   }
 
   .slick-prev {
-    left: -44px;
+    left: -82px;
+  }
+
+  .slider > .slick-prev.slick-arrow {
+    top: 152px;
   }
 
   .slick-next {
