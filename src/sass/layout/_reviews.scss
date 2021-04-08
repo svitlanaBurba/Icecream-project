@@ -166,38 +166,71 @@
 
 // BUTTON STYLES
 
+.slick-prev:before {
+  position: absolute;
+  background-image: url('../images/chevron-right.svg');
+  transform: rotate(180deg);
+  background-size: 50px 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  content: '';
+}
+.slick-next:before {
+  background-image: url('../images/chevron-right.svg');
+  background-size: 50px 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  content: '';
+}
+
 .slick-prev,
 .slick-next {
   top: 9%;
-  background: #d9d9d9;
-  border-radius: 50%;
-  width: 20px;
-  height: 19px;
+
+  //   width: 30px;
+  //   height: 30px;
+  //   background-image: url('../images/slider-arrow-left.svg');
+  //   color: gray;
+  //   border-radius: 50%;
+  //   border: none;
+
+  //   background: #d9d9d9;
+  //   // border-radius: 50%;
+  //   // width: 20px;
+  //   // height: 19px;
 }
 
 .slick-prev {
-  left: 36px;
+  left: -9px;
+}
+.slick-prev.slick-arrow {
+  top: 7%;
 }
 .slick-next {
   right: 36px;
 }
 
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus {
+.slick-prev:before:hover,
+.slick-prev:before:focus,
+.slick-next:before:hover,
+.slick-next:before:focus {
   background: #d31342;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
 
 @media screen and (min-width: 768px) {
   .slick-prev,
   .slick-next {
-    top: 56%;
+    top: 160px;
   }
 
   .slick-prev {
-    left: -44px;
+    left: -82px;
+  }
+  .slider > .slick-prev.slick-arrow {
+    top: 152px;
   }
   .slick-next {
     right: -44px;
